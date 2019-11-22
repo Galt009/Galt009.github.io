@@ -16,7 +16,7 @@
 <meta property="og:description" content="首先，我需要先学习Markdown文档编写规则  Markdown文档编写指南 Hexo yilia 主题使用方案 一步一步教你如何在Windows10上完成hexo博客搭建和yilia主题使用 Hexo博客yilia主题添加背景音乐 （网易云音乐） Hexo Yilia 高级配置     为了博客页面好看，先进行头像&#x2F;图标设置  图标设置   图片放到hexo&#x2F;source&#x2F;img文件夹下 找到">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;top&#x2F;more.png">
-<meta property="og:updated_time" content="2019-11-22T10:45:13.559Z">
+<meta property="og:updated_time" content="2019-11-22T11:13:59.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;top&#x2F;more.png">
   
@@ -208,7 +208,27 @@
 <hr>
 <hr>
 <ul>
-<li>Hexo博客文章置顶功能</li>
+<li>Hexo博客文章置顶功能(方法一)</li>
+</ul>
+<pre><code>安装插件
+npm uninstall hexo-generator-index --save
+npm install hexo-generator-index-pin-top --save
+
+打开：/themes/*/layout（/_macro）/post.ejs
+直接在最前面加入以下代码即可：
+&lt;% if (page.top) { %&gt;
+  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;
+  &lt;font color=7D26CD&gt;置顶&lt;/font&gt;
+  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;
+&lt;% } %&gt;
+
+在需要置顶的博客文件中加: top: 99 (数字最大的博文，将被置顶)
+
+    title: 搭建博客小知识
+    date: 2019-11-21 15:53:53
+    tags:
+    top: 99</code></pre><ul>
+<li>Hexo博客文章置顶功能(方法二，可能无效，建议使用方法一)</li>
 </ul>
 <pre><code>修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js
 
@@ -289,13 +309,13 @@
 在第一个a标签中添加：target=&quot;_self&quot;
 修改后如下：
 
-&lt;div class=&quot;page-modal wx-share js-wx-box&quot;&gt;
-  &lt;a class=&quot;close js-modal-close&quot; href=&quot;javascript:;&quot; target=&quot;_self&quot;&gt;&lt;i class=&quot;icon icon-close&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-  &lt;p&gt;扫一扫，分享到微信&lt;/p&gt;
-  &lt;div class=&quot;wx-qrcode&quot;&gt;
-    &lt;img src=&quot;&lt;%- &apos;qrcode&apos; in locals ? qrcode(sUrl) : &apos;//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://galt009.github.io/&apos; + test  %&gt;&quot; alt=&quot;微信分享二维码&quot;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  &lt;div class=&quot;page-modal wx-share js-wx-box&quot;&gt;
+    &lt;a class=&quot;close js-modal-close&quot; href=&quot;javascript:;&quot; target=&quot;_self&quot;&gt;&lt;i class=&quot;icon icon-close&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;p&gt;扫一扫，分享到微信&lt;/p&gt;
+    &lt;div class=&quot;wx-qrcode&quot;&gt;
+      &lt;img src=&quot;&lt;%- &apos;qrcode&apos; in locals ? qrcode(sUrl) : &apos;//api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://galt009.github.io/&apos; + test  %&gt;&quot; alt=&quot;微信分享二维码&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
       
 
       
@@ -348,7 +368,7 @@
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
-      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+      <a href="javascript:;" class="share-sns share-outer" target="_self">
         <i class="icon icon-share"></i>
       </a>
     </span>
@@ -386,7 +406,7 @@
 </div>
 
 <div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;" target="_self"><i class="icon icon-close"></i></a>
+    <a class="close js-modal-close" href="javascript:;" target="_self" style="left:171px;top:3px;right:18px"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
       <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://galt009.github.io/2019/11/21/top/" alt="微信分享二维码">
@@ -407,7 +427,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          md_test
+          md文档编写测试
         
       </div>
     </a>
@@ -551,6 +571,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
