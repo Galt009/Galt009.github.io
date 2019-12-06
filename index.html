@@ -251,6 +251,97 @@
 
 
   
+    <article id="post-js博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/21/js%E5%8D%9A%E5%AE%A2/">JS面试知识</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/21/js%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2019-11-21T06:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-apply和call的区别？哪个性能更好？"><a href="#1-apply和call的区别？哪个性能更好？" class="headerlink" title="1.apply和call的区别？哪个性能更好？"></a>1.apply和call的区别？哪个性能更好？</h2><pre><code>fn.call(obj,10,20,30);  
+fn.apply(obj,[10,20,30]);   </code></pre><p>call的性能要比apply好（尤其是传递给函数的参数超过3个时）  </p>
+<pre><code>let arr = [10,20,30]
+ obj = {};
+function fn(x,y,z) {}
+fn.apply(obj,arr);// x=10 y=20 z=30
+fn.call(obj,arr);// x=[10,20,30] y=z=undefined
+fn.call(obj,...arr);// 基于ES6的展开运算符也可以实现把数组中的每一项一次传递给函数</code></pre><h2 id="2-性能测试"><a href="#2-性能测试" class="headerlink" title="2.性能测试"></a>2.性能测试</h2><pre><code>console.time(&apos;A&apos;)
+
+console.timeEnd(&apos;A&apos;)
+可以测试出一段程序执行的时间</code></pre>
+        
+          <a class="article-more-a" href="/2019/11/21/js%E5%8D%9A%E5%AE%A2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/21/js%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-md-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

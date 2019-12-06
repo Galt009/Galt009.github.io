@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/11 | 笔记博客</title>
+  <title>JS面试知识 | 笔记博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="笔记博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;11&#x2F;index.html">
+  <meta name="description" content="1.apply和call的区别？哪个性能更好？fn.call(obj,10,20,30);   fn.apply(obj,[10,20,30]);   call的性能要比apply好（尤其是传递给函数的参数超过3个时）   let arr = [10,20,30]  obj = {}; function fn(x,y,z) {} fn.apply(obj,arr);&#x2F;&#x2F; x=10 y=20 z=3">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS面试知识">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;js%E5%8D%9A%E5%AE%A2&#x2F;index.html">
 <meta property="og:site_name" content="笔记博客">
+<meta property="og:description" content="1.apply和call的区别？哪个性能更好？fn.call(obj,10,20,30);   fn.apply(obj,[10,20,30]);   call的性能要比apply好（尤其是传递给函数的参数超过3个时）   let arr = [10,20,30]  obj = {}; function fn(x,y,z) {} fn.apply(obj,arr);&#x2F;&#x2F; x=10 y=20 z=3">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-06T09:57:30.450Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="笔记博客" type="application/atom+xml">
@@ -154,90 +158,283 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js博客" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/22/md-test/" class="archive-article-date">
-  	<time datetime="2019-11-22T05:57:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/22/md-test/">md文档编写测试</a>
+    <h1 class="article-title" itemprop="name">
+      JS面试知识
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/21/top/" class="archive-article-date">
-  	<time datetime="2019-11-21T07:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/21/top/">搭建博客小知识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/21/js%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+        
+        <a href="/2019/11/21/js%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
   	<time datetime="2019-11-21T06:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/21/js%E5%8D%9A%E5%AE%A2/">JS面试知识</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-apply和call的区别？哪个性能更好？"><a href="#1-apply和call的区别？哪个性能更好？" class="headerlink" title="1.apply和call的区别？哪个性能更好？"></a>1.apply和call的区别？哪个性能更好？</h2><pre><code>fn.call(obj,10,20,30);  
+fn.apply(obj,[10,20,30]);   </code></pre><p>call的性能要比apply好（尤其是传递给函数的参数超过3个时）  </p>
+<pre><code>let arr = [10,20,30]
+ obj = {};
+function fn(x,y,z) {}
+fn.apply(obj,arr);// x=10 y=20 z=30
+fn.call(obj,arr);// x=[10,20,30] y=z=undefined
+fn.call(obj,...arr);// 基于ES6的展开运算符也可以实现把数组中的每一项一次传递给函数</code></pre><h2 id="2-性能测试"><a href="#2-性能测试" class="headerlink" title="2.性能测试"></a>2.性能测试</h2><pre><code>console.time(&apos;A&apos;)
 
-        <div class="article-info info-on-right">
-          
+console.timeEnd(&apos;A&apos;)
+可以测试出一段程序执行的时间</code></pre><a id="more"></a>
+<h2 id="3-箭头函数和普通函数的区别"><a href="#3-箭头函数和普通函数的区别" class="headerlink" title="3.箭头函数和普通函数的区别"></a>3.箭头函数和普通函数的区别</h2><p>1.箭头函数语法上比普通函数更加简洁<br>2.箭头函数没有自己的this，它的this是继承函数所处的上下文中的this(使用call/apply等任何方法都无法改变this的指向)<br>3.箭头函数中没有arguments（类数组），只能基于…arg获取传递的参数集合（数组）<br>4.箭头函数不能被new执行（因为：箭头函数没有this 也没有prototype）</p>
+<pre><code>let fn = (...arg) =&gt; {
+    console.log(arg);
+}
+fn(10,20,30);//[10,20,30]
+-------------------------
+function fn(x) {
+    return function (y) {
+        return x + y;
+    }
+}
+let fn = x =&gt; y =&gt; x + y;</code></pre><h2 id="4-回调函数：把一个函数B作为实参传递给另一个函数A，函数A在执行的时候，可以把传递进来的函数B去执行"><a href="#4-回调函数：把一个函数B作为实参传递给另一个函数A，函数A在执行的时候，可以把传递进来的函数B去执行" class="headerlink" title="4.回调函数：把一个函数B作为实参传递给另一个函数A，函数A在执行的时候，可以把传递进来的函数B去执行"></a>4.回调函数：把一个函数B作为实参传递给另一个函数A，函数A在执行的时候，可以把传递进来的函数B去执行</h2><pre><code>function each(arr, callBack) {
+    for (let i = 0; i &lt; arr.length; i++) {
+        let flag = callBack.call(arr, arr[i], i);
+        if(flag === false) {
+            break;
+        }
+    }
+}
+each([10,20,30,40],function(item,index){
+    if (index &gt; 1) {
+        return false;
+    }
+})</code></pre><h2 id="5-把一个字符串里的大小写取反"><a href="#5-把一个字符串里的大小写取反" class="headerlink" title="5.把一个字符串里的大小写取反"></a>5.把一个字符串里的大小写取反</h2><pre><code>let str = &quot;eadDFW分分分&quot;;
+str.replace((/[a-zA-Z]/g),function(content){
+    return content.toUpperCase() === content ? content.toLowerCase() : content.toUpperCase();
+})</code></pre><h2 id="6-检查是否含有一个字符串（除了indexof之外）"><a href="#6-检查是否含有一个字符串（除了indexof之外）" class="headerlink" title="6.检查是否含有一个字符串（除了indexof之外）"></a>6.检查是否含有一个字符串（除了indexof之外）</h2><pre><code>~ function () {
+    function myindexof(T) {
+        let reg = new RegExp(T),
+        res = reg.exec(this);
+        return res === null ? -1 : res.index;
+    }
+    String.prototype.myindexof = myindexof;
+}();
+let S = &quot;fwcercixoosjf&quot;,
+    T = &quot;cix&quot;;
+console.log(S.myindexof(T));</code></pre><h2 id="7-Symbol"><a href="#7-Symbol" class="headerlink" title="7.Symbol"></a>7.Symbol</h2><p>Symbol是ES6中新增的数据类型 typeof Symbol(‘123’)===”Symbol”<br>它创建出来的值是唯一值 Symbol(‘123’)===Symbol(‘123’) // false</p>
+<h2 id="8-对象的属性名不能是一个对象（遇到对象属性名，会默认转换为字符串）"><a href="#8-对象的属性名不能是一个对象（遇到对象属性名，会默认转换为字符串）" class="headerlink" title="8.对象的属性名不能是一个对象（遇到对象属性名，会默认转换为字符串）"></a>8.对象的属性名不能是一个对象（遇到对象属性名，会默认转换为字符串）</h2><pre><code>普通对象.toString()调取的是 Object.prototype上的方法（这个方法是用来检测数据类型的）  
+obj= {} ; obj.toString() =&gt; &quot;[object Object]&quot;
+var b = {key:&apos;123&apos;} ; obj[b]=&apos;b&apos;  =&gt;  obj[&quot;[object Object]&quot;]=&apos;b&apos;</code></pre><h2 id="9-懒加载"><a href="#9-懒加载" class="headerlink" title="9.懒加载"></a>9.懒加载</h2><p>1.前端性能优化的重要方案</p>
+<ul>
+<li>通过图片或者数据的延迟加载，我们可以加快页面渲染的速度，让第一次打开页面的速度变快</li>
+<li>只有滑动到某个区域，我们才加载真实的图片，这样可以节省加载的流量</li>
+</ul>
+<p>2.处理方案</p>
+<ul>
+<li><p>把所有需要延迟加载的图片用一个盒子包起来，设置宽高和默认占位图</p>
+</li>
+<li><p>开始让所有的img的src为空，把真实图片的地址放到img的自定义属性上，让img隐藏</p>
+</li>
+<li><p>等到所有其他资源都加载完成后，我们再开始加载图片</p>
+</li>
+<li><p>对于很多图片，需要当页面滚动的时候，当前区域完全显示出来后再加载真实图片</p>
+<h2 id="10-编写一条正则，用来验证此规则：一个6-16位的字符串，必须同时包含有大小写字母和数字"><a href="#10-编写一条正则，用来验证此规则：一个6-16位的字符串，必须同时包含有大小写字母和数字" class="headerlink" title="10.编写一条正则，用来验证此规则：一个6~16位的字符串，必须同时包含有大小写字母和数字"></a>10.编写一条正则，用来验证此规则：一个6~16位的字符串，必须同时包含有大小写字母和数字</h2><p>  let reg = /(?!^[a-zA-Z]+$)(?!^[0-9]+$)(?!^[a-z0-9]+$)(?!^[A-Z0-9]+$)^[a-zA-Z0-9]{6,16}$/;<br>  (不能全是xx)[匹配规则]{6~16位}<br>  (?=) 包含<br>  (?!)不包含</p>
+<h2 id="11-英文字母汉字组成的字符串，用正则给英文单词前后加空格"><a href="#11-英文字母汉字组成的字符串，用正则给英文单词前后加空格" class="headerlink" title="11.英文字母汉字组成的字符串，用正则给英文单词前后加空格"></a>11.英文字母汉字组成的字符串，用正则给英文单词前后加空格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;no地方ww，丰富ee。&quot;,</span><br><span class="line">reg = /\b[a-z]+\b/ig;</span><br><span class="line">str = str.replace(reg, value =&gt; &#123;</span><br><span class="line">    return &quot; &quot; + value + &quot; &quot;;</span><br><span class="line">&#125;).trim();//trimLeft trimRight 去除字符串左、右空格</span><br><span class="line">console.log(str);</span><br></pre></td></tr></table></figure>
+<h2 id="12-编写一个程序，将数组扁平化，并去除其中重复部分数据，最终得到一个升序且不重复的数组"><a href="#12-编写一个程序，将数组扁平化，并去除其中重复部分数据，最终得到一个升序且不重复的数组" class="headerlink" title="12.编写一个程序，将数组扁平化，并去除其中重复部分数据，最终得到一个升序且不重复的数组"></a>12.编写一个程序，将数组扁平化，并去除其中重复部分数据，最终得到一个升序且不重复的数组</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="noopener">JavaScript | MDN </a></p>
+<p>  let arr = [[1,2,3,2],[3,6,7,1,4,3],[2,4,3,[3,9,0,3,]],1,3,5,6];</p>
+<p>  //使用ES6中提供的 Array.prototype.flat 处理(扁平化)<br>  arr = arr.flat(Infinity);</p>
+</li>
+</ul>
+<hr>
+<pre><code>//基于ES6中的new Set()去重数组
+//[...new Set(arr)]
+//Array.from(new Set(arr))
+arr = Array.from(new Set(arr)).sort((a, b) =&gt; a - b);
+console.log(arr);</code></pre><hr>
+<pre><code>(扁平化)
+arr = arr.toString().split(&apos;,&apos;).map(item=&gt;{
+    return Number(item);
+})
+//map可以循环数组每一项，并修改其值（上面是变成Number类型）
+//split返回字符串数组</code></pre><hr>
+<pre><code>(扁平化)
+arr = JSON.stringify(arr).replace(/(\[|\])/g,&apos;&apos;).split(&apos;,&apos;).map(item=&gt;Number(item));
+//stringify可以直接将字符串变成数组</code></pre><hr>
+<pre><code>数组的扁平化
+
+var arr = [0,[1,2,3],[4,[[4,2,25,]],7,8],10]
+
+function flattenArray(arr){
+    var _arr = [];
+    //每一项进行遍历，看看是常数还是数组
+    for(let i = 0 ; i &lt; arr.length ; i++){
+        //数组的识别，typeof检查数组结果是object
+        if(!Array.isArray(arr[i])){
+            _arr.push(arr[i]);
+        }else{
+            //如果这一项是一个数组，那么重复这次的遍历模式
+            _arr = _arr.concat(flattenArray(arr[i]));
+        }
+    }
+    return _arr;
+}</code></pre><hr>
+<pre><code>基于数组的some方法进行判断检测：验证数组中的某一项有没有符合函数中提供的规则的
+find和some的区别：some返回的是boolean，find找到符合规则的，返回当前低一项，没找到符合的则返回undefined
+
+var A = [2,3,4,5];
+var B = A.find(item =&gt; {
+    return item &lt; 6;
+})
+console.log(B);</code></pre><h2 id="13-变量提升"><a href="#13-变量提升" class="headerlink" title="13.变量提升"></a>13.变量提升</h2><pre><code>&lt;script&gt;
+    var bar = 1;
+    function test(){
+        console.log(bar);//undefined(在此作用域中bar已经声明，还未赋值)
+        var bar = 2;
+        console.log(bar);//2
+    }
+    test();
+&lt;/script&gt;</code></pre><hr>
+<pre><code>作用域、变量提升性
+作用域：先在外部找，如果找不到，向外查找
+优先级：
+    变量 &gt; 函数 &gt; 参数 &gt; 提升</code></pre><hr>
+<pre><code>参数 &gt; 提升
+
+function fn(bar){
+    console.log(bar);//5
+    var bar = 1;
+}
+fn(5);
+相当于：
+function fn(bar){
+    var bar = 5;
+    console.log(bar);//5
+    var bar = 1;
+}
+fn(5);</code></pre><hr>
+<pre><code>function fn(bar){
+    var bar = 1;
+    console.log(bar);//1
+}
+fn(5);
+相当于：
+function fn(bar){
+    var bar = 5;
+    var bar = 1;
+    console.log(bar);//1
+}
+fn(5);</code></pre><hr>
+<pre><code>函数 &gt; 参数 
+
+function fn(bar){
+    function bar(){
+        return &apos;hanshu1&apos;
+    }
+    console.log(bar);//function bar(){return &apos;hanshu2&apos;}
+    var bar = 1; 
+    function bar(){
+        return &apos;hanshu2&apos;
+    }
+}
+fn(5);</code></pre><hr>
+<pre><code>变量 &gt; 函数 
+
+function fn(bar){
+    var bar = 1;
+    function bar(){
+        return &apos;hanshu1&apos;
+    }
+    console.log(bar);//function bar(){return &apos;hanshu1&apos;}
+}
+fn(5);</code></pre><hr>
+<pre><code>var foo = function(){
+    console.log(1);
+}
+function foo(){
+    console.log(2);
+}
+foo();//1(因为变量大于函数)</code></pre><h2 id="14-闭包"><a href="#14-闭包" class="headerlink" title="14.闭包"></a>14.闭包</h2><p>定时器是异步编程：每一轮循环设置定时器，无需定时器触发执行，继续下一轮循环（定时器触发的时候，循环已经结束了）</p>
+<pre><code>for (var i = 0; i &lt; 10; i++) {
+    setTimeout(() =&gt; {
+        console.log(i);
+    }, 1000)
+}
+//1秒后输出10</code></pre><hr>
+<pre><code>for (let i = 0; i &lt; 10; i++) {
+    setTimeout(() =&gt; {
+        console.log(i);
+    }, 1000)
+}
+//1秒后输出0-9</code></pre><hr>
+<pre><code>闭包解决
+
+for (var i = 0; i &lt; 10; i++) {
+    ~ function (i) {
+        setTimeout(() =&gt; {
+            console.log(i);
+        }, 1000);
+    }(i);
+}</code></pre><hr>
+<pre><code>for (var i = 0; i &lt; 10; i++) {
+    setTimeout(((i) =&gt; {
+        return () =&gt; {
+            console.log(i);
+        }
+    })(i), 1000);//大函数执行返回一个小函数，可以形成闭包
+}
+
+简写为：
+
+for (var i = 0; i &lt; 10; i++) {
+    setTimeout((i =&gt; () =&gt; console.log(i))(i), 1000);
+}</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢您的打赏！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -249,95 +446,128 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer" target="_self">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin" target="_parent">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_self" style="left:171px;top:3px;right:18px"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://galt009.github.io/2019/11/21/js%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/21/js%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2019-11-21T06:13:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/11/21/top/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          搭建博客小知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/21/js%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第二篇博客（试水）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/21/js%E7%AC%94%E8%AE%B0/">第二篇博客（试水）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-apply和call的区别？哪个性能更好？"><span class="toc-number">1.</span> <span class="toc-text">1.apply和call的区别？哪个性能更好？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-性能测试"><span class="toc-number">2.</span> <span class="toc-text">2.性能测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-箭头函数和普通函数的区别"><span class="toc-number">3.</span> <span class="toc-text">3.箭头函数和普通函数的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-回调函数：把一个函数B作为实参传递给另一个函数A，函数A在执行的时候，可以把传递进来的函数B去执行"><span class="toc-number">4.</span> <span class="toc-text">4.回调函数：把一个函数B作为实参传递给另一个函数A，函数A在执行的时候，可以把传递进来的函数B去执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-把一个字符串里的大小写取反"><span class="toc-number">5.</span> <span class="toc-text">5.把一个字符串里的大小写取反</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-检查是否含有一个字符串（除了indexof之外）"><span class="toc-number">6.</span> <span class="toc-text">6.检查是否含有一个字符串（除了indexof之外）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Symbol"><span class="toc-number">7.</span> <span class="toc-text">7.Symbol</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-对象的属性名不能是一个对象（遇到对象属性名，会默认转换为字符串）"><span class="toc-number">8.</span> <span class="toc-text">8.对象的属性名不能是一个对象（遇到对象属性名，会默认转换为字符串）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-懒加载"><span class="toc-number">9.</span> <span class="toc-text">9.懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-编写一条正则，用来验证此规则：一个6-16位的字符串，必须同时包含有大小写字母和数字"><span class="toc-number">10.</span> <span class="toc-text">10.编写一条正则，用来验证此规则：一个6~16位的字符串，必须同时包含有大小写字母和数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-英文字母汉字组成的字符串，用正则给英文单词前后加空格"><span class="toc-number">11.</span> <span class="toc-text">11.英文字母汉字组成的字符串，用正则给英文单词前后加空格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-编写一个程序，将数组扁平化，并去除其中重复部分数据，最终得到一个升序且不重复的数组"><span class="toc-number">12.</span> <span class="toc-text">12.编写一个程序，将数组扁平化，并去除其中重复部分数据，最终得到一个升序且不重复的数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-变量提升"><span class="toc-number">13.</span> <span class="toc-text">13.变量提升</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-闭包"><span class="toc-number">14.</span> <span class="toc-text">14.闭包</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/21/html+css%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2019-11-21T03:12:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/21/html+css%E7%AC%94%E8%AE%B0/">我的第一篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -364,8 +594,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
